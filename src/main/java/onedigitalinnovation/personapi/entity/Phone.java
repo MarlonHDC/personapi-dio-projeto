@@ -1,11 +1,11 @@
-package com.onedigitalinnovation.personapi.entity;
+package onedigitalinnovation.personapi.entity;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import com.onedigitalinnovation.personapi.enums.PhoneType;
+import onedigitalinnovation.personapi.enums.PhoneType;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
@@ -25,6 +25,6 @@ public class Phone {
     @Column(nullable = false)
     private PhoneType type;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String number;
 }

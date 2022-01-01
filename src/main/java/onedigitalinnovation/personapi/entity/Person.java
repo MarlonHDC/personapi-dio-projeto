@@ -1,4 +1,4 @@
-package com.onedigitalinnovation.personapi.entity;
+package onedigitalinnovation.personapi.entity;
 
 
 import lombok.AllArgsConstructor;
@@ -9,6 +9,7 @@ import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -36,5 +37,5 @@ public class Person {
     private LocalDate birthData;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-    private List<Phone> phones;
+    private List<Phone> phones = new ArrayList<>();
 }
